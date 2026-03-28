@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, HeartHandshake, Mail, Sparkles } from "lucide-react";
@@ -290,7 +291,7 @@ export function TeamSection() {
 }
 
 export function VolunteerSection() {
-  const volunteerLinks = [
+  const volunteerLinks: { label: string; href: Route }[] = [
     { label: "Code of conduct", href: "/volunteer#code-of-conduct" },
     { label: "Community channels", href: "/volunteer#communication-channels" },
     { label: "Recognition & appreciation", href: "/volunteer#recognition" },
