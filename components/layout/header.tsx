@@ -10,6 +10,12 @@ import { Logo } from "@/components/brand/logo";
 import { navItems } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
+function hasChildren(
+  item: (typeof navItems)[number]
+): item is Extract<(typeof navItems)[number], { children: readonly { label: string; href: string }[] }> {
+  return "children" in item;
+}
+
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [expanded, setExpanded] = useState<string | null>(null);
 
@@ -36,7 +42,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
 
             <nav className="mt-10 flex flex-1 flex-col gap-3" aria-label="Mobile navigation">
               {navItems.map((item) =>
-                item.children ? (
+                hasChildren(item) ? (
                   <div key={item.label} className="rounded-3xl border border-white/15 bg-white/5 p-4">
                     <div className="flex items-center justify-between gap-4">
                       <Link
@@ -156,7 +162,7 @@ export function Header() {
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
             {navItems.map((item) =>
-              item.children ? (
+              hasChildren(item) ? (
                 <div
                   key={item.label}
                   className="relative"
