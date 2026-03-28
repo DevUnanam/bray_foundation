@@ -1,3 +1,5 @@
+"use client";
+
 type WaveDividerProps = {
   topColor?: string;
   bottomColor?: string;

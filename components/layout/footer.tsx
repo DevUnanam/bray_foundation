@@ -42,7 +42,8 @@ export function Footer() {
             </div>
             <div className="mt-8 text-sm text-white/72">
               <p>hello@blessingraymondfoundation.org</p>
-              <p className="mt-2">Instagram / Facebook / LinkedIn</p>
+              <p className="mt-2">08122512474</p>
+              <p className="mt-2">@project_think_kindly</p>
             </div>
           </div>
         </div>

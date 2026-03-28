@@ -15,8 +15,9 @@ export default function ContactPage() {
               <h2 className="font-display text-4xl">Reach the foundation</h2>
               <div className="mt-6 space-y-5 text-white/84">
                 <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-brand-pink" /> hello@blessingraymondfoundation.org</p>
-                <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-brand-pink" /> +234 (000) 000 0000</p>
+                <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-brand-pink" /> 08122512474</p>
                 <p className="flex items-center gap-3"><MapPin className="h-5 w-5 text-brand-pink" /> Lagos, Nigeria</p>
+                <p className="text-sm text-white/70">@project_think_kindly</p>
               </div>
             </div>
           </Reveal>

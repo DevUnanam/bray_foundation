@@ -81,7 +81,7 @@ export function EditorialList({
 }: {
   id?: string;
   title: string;
-  items: { title: string; description: string }[];
+  items: { id?: string; title: string; description: string; href?: string; ctaLabel?: string }[];
 }) {
   return (
     <section className="bg-[#fff7fd]" id={id}>
@@ -92,15 +92,23 @@ export function EditorialList({
         <div className="mt-12 grid gap-5">
           {items.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.06}>
-              <div className="organic-card grid gap-4 bg-white p-6 lg:grid-cols-[0.15fr_0.85fr] lg:items-start">
+              <div
+                id={item.id}
+                className="organic-card grid gap-4 bg-white p-6 lg:grid-cols-[0.15fr_0.85fr] lg:items-start"
+              >
                 <div className="font-display text-4xl text-brand-pink">{String(index + 1).padStart(2, "0")}</div>
                 <div>
                   <h3 className="font-display text-3xl text-brand-plum">{item.title}</h3>
                   <p className="mt-3 max-w-3xl text-lg leading-relaxed text-brand-black/72">{item.description}</p>
-                  <Link href="/contact" className="focus-ring mt-5 inline-flex items-center gap-2 font-bold text-brand-teal">
-                    Start a conversation
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="focus-ring mt-5 inline-flex items-center gap-2 font-bold text-brand-teal"
+                    >
+                      {item.ctaLabel ?? "Learn more"}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : null}
                 </div>
               </div>
             </Reveal>

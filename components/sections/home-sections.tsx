@@ -35,12 +35,18 @@ export function HomeHero() {
       <motion.div className="absolute left-[6%] top-32 h-28 w-28 rounded-full bg-brand-pink/20 blur-3xl" style={{ y: slowFloat }} />
       <motion.div className="absolute bottom-20 right-[10%] h-36 w-36 rounded-full bg-brand-teal/25 blur-3xl" style={{ y: reverseFloat }} />
       <div className="container-shell relative z-10 grid min-h-[calc(100vh-5rem)] gap-12 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+
+        <Reveal delay={0.15}>
+          <div className="relative">
+            <SceneIllustration theme="hero" />
+            {/* <FloatingBadge label="Kindness campaigns" className="-left-2 top-10 bg-brand-white text-brand-plum" />
+            <FloatingBadge label="Youth leadership" className="right-3 top-24 bg-brand-pink text-brand-plum" />
+            <FloatingBadge label="Mental health advocacy" className="bottom-10 left-6 bg-brand-teal text-brand-white" /> */}
+          </div>
+        </Reveal>
         <Reveal>
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-plum shadow-bubble">
-              <Sparkles className="h-4 w-4" />
-              Youth-centered. Hope-fueled. Community-led.
-            </p>
+
             <h1 className="font-display text-[3.6rem] leading-[0.88] sm:text-[5rem] lg:text-[6.9rem]">
               Growing kind
               <br />
@@ -59,14 +65,7 @@ export function HomeHero() {
             </div>
           </div>
         </Reveal>
-        <Reveal delay={0.15}>
-          <div className="relative">
-            <SceneIllustration theme="hero" />
-            <FloatingBadge label="Kindness campaigns" className="-left-2 top-10 bg-brand-white text-brand-plum" />
-            <FloatingBadge label="Youth leadership" className="right-3 top-24 bg-brand-pink text-brand-plum" />
-            <FloatingBadge label="Mental health advocacy" className="bottom-10 left-6 bg-brand-teal text-brand-white" />
-          </div>
-        </Reveal>
+
       </div>
       <WaveDivider topColor="#c2e9ff" bottomColor="#ffffff" />
     </section>
@@ -140,10 +139,13 @@ export function WhatWeDoSection() {
                   </div>
                   <h3 className="font-display text-3xl leading-tight">{pillar.title}</h3>
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-brand-black/70">{pillar.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-bold text-brand-pink">
+                  <Link
+                    href={`/what-we-do#${pillar.id}`}
+                    className="focus-ring mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-pink"
+                  >
                     Learn about this work
                     <ArrowRight className="h-4 w-4" />
-                  </div>
+                  </Link>
                 </motion.article>
               </Reveal>
             );
@@ -288,6 +290,13 @@ export function TeamSection() {
 }
 
 export function VolunteerSection() {
+  const volunteerLinks = [
+    { label: "Code of conduct", href: "/volunteer#code-of-conduct" },
+    { label: "Community channels", href: "/volunteer#communication-channels" },
+    { label: "Recognition & appreciation", href: "/volunteer#recognition" },
+    { label: "Ongoing support", href: "/faq" }
+  ];
+
   return (
     <section className="bg-[#ffecf7]">
       <div className="container-shell section-padding grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
@@ -307,10 +316,14 @@ export function VolunteerSection() {
               description="Volunteers commit to respect, timely communication, accountability, and encouragement. We celebrate contribution, create room for learning, and stay connected through clear community channels."
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {["Code of conduct", "Community channels", "Recognition & appreciation", "Ongoing support"].map((item) => (
-                <div key={item} className="rounded-[24px] bg-brand-sky px-4 py-4 font-bold text-brand-plum">
-                  {item}
-                </div>
+              {volunteerLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="focus-ring rounded-[24px] bg-brand-sky px-4 py-4 font-bold text-brand-plum transition hover:-translate-y-1"
+                >
+                  {item.label}
+                </Link>
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-4">

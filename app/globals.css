@@ -60,6 +60,18 @@ body {
   @apply outline-none ring-offset-2 transition focus-visible:ring-4 focus-visible:ring-brand-pink focus-visible:ring-offset-transparent;
 }
 
+.home-hero__image {
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero__image-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
