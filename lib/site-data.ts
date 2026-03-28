@@ -55,7 +55,7 @@ export const navItems = [
     ]
   },
   { label: "Contact", href: "/contact" }
-];
+] as const;
 
 export const impactStats = [
   { value: "80+", label: "secondary schools reached" },
@@ -215,7 +215,7 @@ export const footerLinks = {
     { label: "FAQ", href: "/faq" },
     { label: "Team", href: "/team" }
   ]
-};
+} as const;
 
 export const pageBlurb = {
   about:

@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { type ReactNode } from "react";
@@ -7,7 +8,7 @@ import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonProps = {
-  href?: string;
+  href?: Route;
   children: ReactNode;
   className?: string;
   variant?: "primary" | "secondary" | "ghost";
