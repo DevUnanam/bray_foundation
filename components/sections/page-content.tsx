@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Route } from "next";
 import { ArrowRight } from "lucide-react";
 
 import { SceneIllustration } from "@/components/art/scene-illustration";
@@ -81,7 +82,7 @@ export function EditorialList({
 }: {
   id?: string;
   title: string;
-  items: { id?: string; title: string; description: string; href?: string; ctaLabel?: string }[];
+  items: { id?: string; title: string; description: string; href?: Route; ctaLabel?: string }[];
 }) {
   return (
     <section className="bg-[#fff7fd]" id={id}>
