@@ -31,7 +31,7 @@ export function HomeHero() {
   const reverseFloat = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -110]);
 
   return (
-    <section className="relative isolate overflow-hidden bg-brand-sky bg-hero-radial pt-32 text-brand-plum">
+    <section className="relative isolate overflow-hidden bg-brand-teal pt-32 text-brand-white">
       <div className="noise-overlay absolute inset-0" />
       <motion.div className="absolute left-[6%] top-32 h-28 w-28 rounded-full bg-brand-pink/20 blur-3xl" style={{ y: slowFloat }} />
       <motion.div className="absolute bottom-20 right-[10%] h-36 w-36 rounded-full bg-brand-teal/25 blur-3xl" style={{ y: reverseFloat }} />
@@ -55,7 +55,7 @@ export function HomeHero() {
               <br />
               brighter society.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-black/75 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-white/85 sm:text-xl">
               Blessing Raymond Foundation helps young people flourish through academic excellence, mental health advocacy, youth leadership, social reform, and everyday acts of kindness that ripple outward.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -68,7 +68,7 @@ export function HomeHero() {
         </Reveal>
 
       </div>
-      <WaveDivider topColor="#c2e9ff" bottomColor="#ffffff" />
+      <WaveDivider topColor="#1cabb0" bottomColor="#ffffff" />
     </section>
   );
 }
